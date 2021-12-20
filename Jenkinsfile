@@ -8,7 +8,8 @@ pipeline {
     }
     stage("test") {
       steps{
-        python -m unittest discover -s tests/unit
+        echo 'Building Graphx application ...'
+        sh 'python -m unittest discover -s tests/unit'
       }
     }
     stage("deploy") {
