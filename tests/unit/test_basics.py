@@ -1,6 +1,6 @@
 import unittest
 
-from basics import adder
+from basics import adder, MyClass
 
 
 class TestAdder(unittest.TestCase):
@@ -27,6 +27,22 @@ class TestAdder(unittest.TestCase):
         data = [-1, 2, -3]
         result = adder(data)
         self.assertEqual(result, -2, "should be -2")
+
+
+class TestNumbers(unittest.TestCase):
+
+    def test_oneNumbers(self):
+        mc = MyClass()
+        mc.add_number(5)
+        self.assertListEqual(mc.get_numbers(), [5])
+        del mc
+
+    def test_twoNumbers(self):
+        mc = MyClass()
+        mc.add_number(15)
+        mc.add_number(6)
+        self.assertListEqual(mc.get_numbers(), [15, 6])
+        del mc
 
 
 if __name__ == '__main__':
