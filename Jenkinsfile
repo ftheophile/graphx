@@ -18,19 +18,19 @@ pipeline {
       }
     }
     stage("deploy") {
-      parallel( 
-        "dev001":{
-          node('dev001'){
+      parallel {
+        stage("dev001") {
+          steps{
             echo 'Deploying GraphX application to dev001 landscape...'
           }
         },
-        "staging":{
-          node('staging'){
+        stage("staging"){
+          steps{
             echo 'Deploying GraphX application to staging landscape...'
             sh 'curl --location --request GET "https://postman-echo.com/get?deploy=staging&status=marked"'
           }
         }
-       ) 
+      } 
     }    
   }
   post {
