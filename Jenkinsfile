@@ -26,7 +26,7 @@ pipeline {
       staging:{
         node('staging'){
             echo 'Deploying GraphX application to staging landscape...'
-            curl --location --request GET 'https://postman-echo.com/get?deploy=staging&status=marked'
+            sh 'curl --location --request GET "https://postman-echo.com/get?deploy=staging&status=marked"'
         }
       }
     }    
