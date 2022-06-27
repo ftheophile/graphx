@@ -23,7 +23,7 @@ pipeline {
           steps{
             echo 'Deploying GraphX application to dev001 landscape...'
           }
-        },
+        }
         stage("staging"){
           steps{
             echo 'Deploying GraphX application to staging landscape...'
