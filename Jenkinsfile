@@ -8,7 +8,7 @@ pipeline {
     stage("build") {
       steps{
         echo "Hello ${params.administrator}, Building GraphX application ..."
-        sh 'python --version'
+        sh 'python3 --version'
       }
     }
     stage("test") {
