@@ -37,7 +37,7 @@ pipeline {
     }
     failure {
         echo "Notifying ${params.administrator} that the pipeline failed"
-        mail bcc: '', body: "<b>GraphX pipeline has failed according to ${env.JOB_NAME} <br> Build Number: ${env.BUILD_NUMBER} <br> URL: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html' replyTo: '', to: "jenkins-admin@local.me", subject: 'GraphX Pipeline failed!';
+        mail bcc: '', body: "<b>GraphX pipeline has failed according to ${env.JOB_NAME} <br> Build Number: ${env.BUILD_NUMBER} <br> URL: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', to: "jenkins-admin@local.me", subject: 'GraphX Pipeline failed!';
     }
   }
 }
