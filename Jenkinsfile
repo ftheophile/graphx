@@ -1,5 +1,5 @@
 pipeline {
-  agent { docker { image 'python:3.10.1-alpine'}}
+  agent any
 
   parameters{
     string(name: 'administrator', defaultValue: 'Jenkins-Admin', description: 'Name of administrator')
